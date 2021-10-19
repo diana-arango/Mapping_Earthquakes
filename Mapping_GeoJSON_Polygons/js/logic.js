@@ -25,8 +25,7 @@ let satelliteStreets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark
 // Create a base layer that holds both maps.
 let baseMaps = {
 
-    light: light,
-    Dark: dark
+    Dark: dark,
     Streets: streets,
     SatelliteStreets: satelliteStreets
 
@@ -37,7 +36,7 @@ let map = L.map('mapid', {
 
     center: [44.0, -80.0],
     zoom: 2,
-    layers: [light]
+    layers: [light],
 
     center: [43.7, -79.3],
     zoom: 11,
@@ -62,6 +61,7 @@ let myStyle = {
 // Grabbing our GeoJSON data.
 d3.json(torontoData).then(function(data) {
   console.log(data);
+});
 
 // Creating a GeoJSON layer with the retrieved data.
 L.geoJson(data, {
